@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For My Punnu ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:black;
+    color:white;
+}
+
+section{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:40px;
+    text-align:center;
+}
+
+#welcome{
+    background:linear-gradient(135deg,#ff4b91,#ff8fab,#ffb3c6);
+    position:relative;
+}
+
+#welcome h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    animation: glow 2s infinite alternate;
+}
+
+#welcome p{
+    font-size:1.5rem;
+    margin-bottom:40px;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff2e74;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#ff2e74;
+    color:white;
+}
+
+#loveLetter{
+    background:#111;
+}
+
+#loveLetter h2{
+    font-size:3rem;
+    margin-bottom:30px;
+    color:#ff7eb3;
+}
+
+.paragraph{
+    max-width:900px;
+    font-size:1.2rem;
+    line-height:2;
+}
+
+.quiz{
+    margin-top:60px;
+    width:100%;
+    max-width:700px;
+}
+
+.question{
+    margin:25px 0;
+    padding:20px;
+    background:#1c1c1c;
+    border-radius:20px;
+}
+
+.question h3{
+    margin-bottom:15px;
+    color:#ff7eb3;
+}
+
+.option{
+    display:block;
+    margin:10px auto;
+    padding:12px;
+    width:80%;
+    border-radius:12px;
+    background:#2a2a2a;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.option:hover{
+    background:#ff2e74;
+}
+
+#games{
+    background:linear-gradient(135deg,#141e30,#243b55);
+}
+
+.games-container{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.game-card{
+    width:250px;
+    padding:30px;
+    background:white;
+    color:black;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.game-card:hover{
+    transform:translateY(-10px);
+}
+
+#memories{
+    background:#000;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
+}
+
+.gallery img,
+.gallery video{
+    width:300px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
+}
+
+audio{
+    margin-top:40px;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px #ff0055;
+    }
+}
+
+.floating-hearts span{
+    position:absolute;
+    bottom:-50px;
+    color:white;
+    font-size:20px;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100vh) rotate(360deg);
+        opacity:0;
+    }
+}
+/* MEMORIES SECTION */
+.memories-section{
+    padding:100px 10%;
+    background:linear-gradient(to bottom,#ffdde1,#ee9ca7);
+    text-align:center;
+}
+/* GLOWING TIMELINE LINE */
+.timeline::after{
+    content:'';
+    position:absolute;
+    width:6px;
+    background:linear-gradient(to bottom,#ff4d6d,#ffffff,#ff4d6d);
+    top:0;
+    bottom:0;
+    left:50%;
+    margin-left:-3px;
+    border-radius:10px;
+
+    animation:glowLine 2s infinite alternate;
+    box-shadow:
+    0 0 10px #ff4d6d,
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d;
+}
+
+/* HEART GLOW */
+.memory-card::after{
+    content:'❤';
+    position:absolute;
+    width:45px;
+    height:45px;
+    right:-22px;
+    background:#ff4d6d;
+    color:white;
+    border-radius:50%;
+    top:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    z-index:10;
+
+    animation:pulseHeart 1.5s infinite;
+    box-shadow:
+    0 0 10px #ff4d6d,
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d;
+}
+
+.memory-card.right::after{
+    left:-22px;
+}
+
+/* CARD GLOW EFFECT */
+.memory-content{
+    background:rgba(255,255,255,0.95);
+    padding:20px;
+    border-radius:20px;
+    box-shadow:
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 20px rgba(255,77,109,0.4);
+    transition:0.5s;
+    backdrop-filter:blur(5px);
+}
+
+.memory-content:hover{
+    transform:translateY(-10px) scale(1.03);
+
+    box-shadow:
+    0 0 15px #fff,
+    0 0 30px #ff4d6d,
+    0 0 60px #ff4d6d;
+}
+
+/* IMAGE HOVER */
+.memory-content img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+    height:250px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.memory-content img:hover{
+    transform:scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes glowLine{
+    from{
+        box-shadow:
+        0 0 5px #ff4d6d,
+        0 0 10px #ff4d6d;
+    }
+
+    to{
+        box-shadow:
+        0 0 20px #ff4d6d,
+        0 0 40px #ff4d6d,
+        0 0 60px #ff4d6d;
+    }
+}
+
+@keyframes pulseHeart{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+.memories-section h2{
+    font-size:3rem;
+    margin-bottom:60px;
+    color:white;
+}
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::after{
+    content:'';
+    position:absolute;
+    width:6px;
+    background:white;
+    top:0;
+    bottom:0;
+    left:50%;
+    margin-left:-3px;
+    border-radius:10px;
+}
+
+.memory-card{
+    padding:20px 40px;
+    position:relative;
+    width:50%;
+}
+
+.memory-card.left{
+    left:0;
+}
+
+.memory-card.right{
+    left:50%;
+}
+
+.memory-content{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:0.4s;
+}
+
+.memory-content:hover{
+    transform:scale(1.05);
+}
+
+.memory-content h3{
+    color:#ff4d6d;
+    margin-bottom:15px;
+}
+
+.memory-content p{
+    color:#444;
+    line-height:1.6;
+}
+
+.memory-content img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+    height:250px;
+    object-fit:cover;
+}
+.love-question{
+    text-align:center;
+    margin-top:100px;
+    padding:50px;
+}
+
+.question-box{
+    position:relative;
+    height:300px;
+    border-radius:20px;
+}
+
+#noBtn{
+    position:absolute;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.2s;
+}
+/* CIRCLE */
+.memory-card::after{
+    content:'❤';
+    position:absolute;
+    width:40px;
+    height:40px;
+    right:-20px;
+    background:#ff4d6d;
+    color:white;
+    border-radius:50%;
+    top:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    z-index:10;
+}
+
+.memory-card.right::after{
+    left:-20px;
+}
+
+/* MOBILE */
+@media screen and (max-width:768px){
+
+.timeline::after{
+    left:20px;
+}
+
+.memory-card{
+    width:100%;
+    padding-left:70px;
+    padding-right:20px;
+}
+
+.memory-card.right{
+    left:0;
+}
+
+.memory-card.left::after,
+.memory-card.right::after{
+    left:0;
+}
+
+}
+
+.love-question{
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top left, rgba(255,0,128,0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(128,0,255,0.18), transparent 35%),
+    linear-gradient(180deg,#070016,#120024,#1f0036);
+
+    z-index:1;
+}
+
+/* ===== DREAMY BACKGROUND FOR ALL SECTIONS EXCEPT WELCOME ===== */
+
+#loveLetter,
+#games,
+#memories,
+.love-question{
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top left, rgba(255,0,128,0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(128,0,255,0.18), transparent 35%),
+    linear-gradient(180deg,#070016,#120024,#1f0036);
+
+    z-index:1;
+}
+
+/* DREAMY GLOW */
+#loveLetter::before,
+#games::before,
+#memories::before,
+.love-question::before{
+    content:'';
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:rgba(255,105,180,0.15);
+
+    border-radius:50%;
+    filter:blur(120px);
+
+    top:-150px;
+    left:-100px;
+
+    animation:dreamMove 10s infinite alternate;
+
+    z-index:0;
+}
+
+/* SECOND GLOW */
+#loveLetter::after,
+#games::after,
+#memories::after,
+.love-question::after{
+    content:'';
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    background:rgba(138,43,226,0.15);
+
+    border-radius:50%;
+    filter:blur(120px);
+
+    bottom:-120px;
+    right:-100px;
+
+    animation:dreamMove2 14s infinite alternate;
+
+    z-index:0;
+}
+
+/* STARS CONTAINER */
+.stars{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:1;
+    pointer-events:none;
+}
+
+/* INDIVIDUAL STARS */
+.stars span{
+    position:absolute;
+
+    bottom:-100px;
+
+    width:4px;
+    height:4px;
+
+    background:white;
+    border-radius:50%;
+
+    opacity:0.8;
+
+    box-shadow:
+    0 0 5px white,
+    0 0 10px white,
+    0 0 20px #ff66cc;
+
+    animation:starFloat linear infinite;
+}
+
+/* STAR ANIMATION */
+@keyframes starFloat{
+
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.2);
+        opacity:0;
+    }
+
+}
+
+/* GLOW MOVEMENT */
+@keyframes dreamMove{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(120px,80px);
+    }
+
+}
+
+@keyframes dreamMove2{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(-100px,-60px);
+    }
+
+}
+
+/* SECTION SETTINGS */
+#loveLetter,
+#games,
+#memories,
+.love-question{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* CONTENT ABOVE EVERYTHING */
+#loveLetter h1,
+#loveLetter h2,
+#loveLetter h3,
+#loveLetter p,
+#loveLetter button,
+#loveLetter .paragraph,
+#loveLetter .quiz,
+
+#games h1,
+#games h2,
+#games h3,
+#games p,
+#games button,
+#games .games-container,
+
+#memories h1,
+#memories h2,
+#memories h3,
+#memories p,
+#memories button,
+#memories .timeline,
+
+.love-question h1,
+.love-question h2,
+.love-question h3,
+.love-question p,
+.love-question button,
+.love-question .question-box{
+    position:relative;
+    z-index:5;
+}
+
+/* STARS */
+.stars{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+    pointer-events:none;
+}
+
+/* EACH STAR */
+.stars span{
+    position:absolute;
+    bottom:-100px;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+    background:white;
+
+    box-shadow:
+    0 0 6px white,
+    0 0 12px white,
+    0 0 20px #ff66cc;
+
+    animation:starFloat linear infinite;
+    opacity:0;
+}
+
+/* FLOAT ANIMATION */
+@keyframes starFloat{
+
+    0%{
+        transform:translateY(0) scale(0.3);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.2);
+        opacity:0;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- WELCOME SECTION -->
+<section id="welcome">
+
+<div class="floating-hearts">
+    <span style="left:10%;">❤️</span>
+    <span style="left:30%; animation-delay:2s;">💖</span>
+    <span style="left:50%; animation-delay:4s;">💕</span>
+    <span style="left:70%; animation-delay:1s;">❤️</span>
+    <span style="left:90%; animation-delay:3s;">💘</span>
+    <span style="left:50%; animation-delay:4s;">💕</span>
+    <span style="left:70%; animation-delay:1s;">❤️</span>
+    <span style="left:90%; animation-delay:3s;">💘</span>
+    <span style="left:50%; animation-delay:4s;">💕</span>
+    <span style="left:70%; animation-delay:1s;">❤️</span>
+    <span style="left:90%; animation-delay:3s;">💘</span>
+</div>
+
+<h1>Hi Meri Pyaari Si Punnu ❤️</h1>
+
+<h2>Welcome to our little love world ✨</h2>
+
+<button id="startBtn">
+    Shall We Start Love? 💌
+</button>
+
+</section>
+
+<!-- LOVE LETTER -->
+<section id="loveLetter">
+<div class="stars">
+    <span style="left:10%; animation-duration:8s;"></span>
+    <span style="left:20%; animation-duration:12s;"></span>
+    <span style="left:35%; animation-duration:10s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+</div>
+<h2>For The Love Of My Life ❤️</h2>
+
+<div class="paragraph">
+    Meri pyaari si Punnu,  
+    pta nhi aap meri life me itni special kese ban gyin, 
+    lekin ab har din ka sirf aapse hi aagaz aur aapse hi mukammal hota hai. 
+    Aapki muskaan meri happiness hai, aapki voice mera comfort hai, 
+    aur aapka saath meri duniya. Me shayad perfect boyfriend na hoon, 
+    lekin ek baat promise krta hoon — jitna pyaar aur loyalty main aapko de sakta hoon, 
+    utna shayad koi aur kabhi nahi de paayega. Aap mere liye sirf ek ldki nhin ho, 
+    aap meri peace ho, meri safe place ho, meri aadat ho. Main future me duniya ke 
+    bohot saare places explore karna chahta hoon… but sirf aapke saath. 
+    Aapke bina sab incomplete lagta hai you complete me baby.
+    Me aapse bhotttt pyar krta huu, hadh se zyada sabse zyada khudh se zyada.
+    I love you shoo shoo shoo muchhhh babyyy ❤️
+    Thank you so muchhh meri zindgi me aane ke liye mera bachha ❤️
+    Meri zindgi hai tu ❤️
+</div>
+
+<!-- QUIZ -->
+<div class="quiz">
+
+<h2 style="margin-top:70px;">Punnu Quiz 💕</h2>
+
+<div class="question">
+    <h3>1. What is my favorite color?</h3>
+    <div class="option">Red</div>
+    <div class="option">Blue</div>
+    <div class="option">Pink</div>
+</div>
+
+<div class="question">
+    <h3>2. Whom do I love the most in the world?</h3>
+    <div class="option">My Phone 📱</div>
+    <div class="option">You ❤️</div>
+    <div class="option">Food 🍕</div>
+</div>
+
+<div class="question">
+    <h3>3. Where do I want to visit outside India with you?</h3>
+    <div class="option">Paris 🗼</div>
+    <div class="option">Maldives 🌊</div>
+    <div class="option">Edinburgh Castle 🏰</div>
+</div>
+<div class="question">
+    <h3>3. What is my favorite food?</h3>
+    <div class="option">Pizza 🍕</div>
+    <div class="option">Burgers 🍔</div>
+    <div class="option">You ❤️</div>
+</div>
+<div class="question">
+    <h3>3. What is my favorite sweet?</h3>
+    <div class="option">You ❤️</div>
+    <div class="option">Cookies 🍪</div>
+    <div class="option">Cake 🍰</div>
+</div>
+<div class="question">
+    <h3>3. What is my favorite Sport?</h3>
+    <div class="option">Football ⚽</div>
+    <div class="option">Basketball 🏀</div>
+    <div class="option">Table Tennis 🎾</div>
+</div>
+
+<button style="margin-top:40px;"
+onclick="scrollToSection('games')">
+Do You Wanna Play Games? 🎮
+</button>
+
+</div>
+
+</section>
+
+<!-- GAMES SECTION -->
+<section id="games">
+<div class="stars">
+    <span style="left:10%; animation-duration:8s;"></span>
+    <span style="left:20%; animation-duration:12s;"></span>
+    <span style="left:35%; animation-duration:10s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+</div>
+<h1>Love Games 🎮❤️</h1>
+
+<div class="games-container">
+
+<div class="game-card">
+    <h2>Tic Tac Toe ❌⭕</h2>
+    <p>Play cute romantic tic tac toe together.</p>
+</div>
+
+<div class="game-card">
+    <h2>Catch The Heart 💖</h2>
+    <p>Catch hearts and increase love score.</p>
+</div>
+
+<div class="game-card">
+    <h2>Love Quiz 💌</h2>
+    <p>Answer cute relationship questions.</p>
+</div>
+
+</div>
+
+<button style="margin-top:50px;"
+onclick="scrollToSection('memories')">
+See Our Memories 📸
+</button>
+
+</section>
+
+<!-- MEMORIES TIMELINE SECTION -->
+<section id="memories" class="memories-section">
+    <div class="stars">
+    <span style="left:10%; animation-duration:8s;"></span>
+    <span style="left:20%; animation-duration:12s;"></span>
+    <span style="left:35%; animation-duration:10s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+</div>
+  <h2 style="color: #ff2e74;">Our Beautiful Memories ❤️</h2>
+  <h1>Together Since 1 Jan 2023 💖</h1>
+  <p id="daysCounter"></p>
+
+  <div class="timeline">
+
+    <!-- 2023 -->
+    <div class="memory-card left">
+      <div class="memory-content">
+        <h3>2023 🌸</h3>
+        <img src="image 2.jpg" alt="2023 Memory">
+        <p>
+          The year everything started.  
+          Our first talks, first smiles, and the beginning of something beautiful ❤️
+        </p>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="memory-card right">
+      <div class="memory-content">
+        <h3>2024 💕</h3>
+        <video src="vid.mp4" autoplay muted loop alt="2024 Memory" style="border-radius: 3%; height: 300px;"></video>
+        <p>
+          We had many fights more than ever.
+          But we chose to stay together like always✨
+        </p>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="memory-card left">
+      <div class="memory-content">
+        <h3>2025 🌹</h3>
+        <img src="image 5.jpg" alt="2025 Memory">
+        <p>
+          Laughs, fights, love and endless memories.  
+          You became my favorite person forever 🥺❤️
+        </p>
+      </div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="memory-card right">
+      <div class="memory-content">
+        <h3>2026 💍</h3>
+        <img src="image6.jpg" alt="2026 Memory">
+        <p>
+          And this is just the beginning...  
+          More memories, more love, more us forever ♾️❤️
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOVE SECTION -->
+<section class="love-question">
+    <div class="stars">
+    <span style="left:10%; animation-duration:8s;"></span>
+    <span style="left:20%; animation-duration:12s;"></span>
+    <span style="left:35%; animation-duration:10s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+    <span style="left:50%; animation-duration:15s;"></span>
+    <span style="left:65%; animation-duration:9s;"></span>
+    <span style="left:80%; animation-duration:14s;"></span>
+    <span style="left:90%; animation-duration:11s;"></span>
+</div>
+    <h2>Do You Really Love Me? ❤️</h2>
+    <div class="question-box">
+        <button id="noBtn">No 😢</button>
+    </div>
+    <div class="question-box">
+        <button id="yesBtn">Yoss ❤️</button>
+    </div>
+    <h2>(I hope ye dekh kr ek choti si muskan to ayi hi hogi apke beinteha khubsurat chehre pr❤️) </h2>
+    <p>Mashallah muskurati hui achhi lgti ho...yunhi achhi lgti rhna mujhe </br>
+    Achha lgna aap pr achha lgta hai❤</p>
+</section>
+
+<!-- MUSIC -->
+<audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+</section>
+
+<script>
+
+// ================= SMOOTH SCROLL =================
+
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({
+        behavior:'smooth'
+    });
+}
+
+
+// ================= QUIZ SYSTEM =================
+
+const correctAnswers = [
+    "Red",
+    "You ❤️",
+    "Edinburgh Castle 🏰",
+    "You ❤️",
+    "You ❤️",
+    "Football ⚽"
+
+];
+
+const questions = document.querySelectorAll('.question');
+
+questions.forEach((question, index) => {
+
+    const options = question.querySelectorAll('.option');
+
+    options.forEach(option => {
+
+        option.addEventListener('click', () => {
+
+            options.forEach(opt => {
+
+                opt.style.background = "#2a2a2a";
+
+            });
+
+            if(option.innerText === correctAnswers[index]){
+
+                option.style.background = "green";
+
+                setTimeout(() => {
+
+                    alert("Awww Correct Baby ❤️");
+
+                },200);
+
+            }
+
+            else{
+
+                option.style.background = "red";
+
+                setTimeout(() => {
+
+                    alert("You don't love me more 😭");
+
+                },200);
+
+            }
+
+        });
+
+    });
+
+});
+
+
+// ================= GAMES =================
+
+const gameCards = document.querySelectorAll('.game-card');
+
+
+// ================= TIC TAC TOE =================
+
+gameCards[0].addEventListener('click', () => {
+
+    let gameWindow = document.createElement('div');
+
+    gameWindow.innerHTML = `
+    
+    <div id="ticTacToeBox">
+
+        <h1>Tic Tac Toe ❤️</h1>
+
+        <div class="board">
+
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+
+        </div>
+
+        <h2 id="winnerText"></h2>
+
+        <button onclick="this.parentElement.parentElement.remove()">
+            Close
+        </button>
+
+    </div>
+    
+    `;
+
+    document.body.appendChild(gameWindow);
+
+    const style = document.createElement('style');
+
+    style.innerHTML = `
+
+    #ticTacToeBox{
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        background:#111;
+        padding:40px;
+        border-radius:25px;
+        z-index:9999;
+        text-align:center;
+        box-shadow:0 0 30px rgba(255,255,255,0.3);
+    }
+
+    .board{
+        width:300px;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+        margin:30px auto;
+    }
+
+    .cell{
+        width:90px;
+        height:90px;
+        background:white;
+        color:#ff2e74;
+        font-size:3rem;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        cursor:pointer;
+        border-radius:15px;
+    }
+
+    #winnerText{
+        margin-bottom:20px;
+        color:#ff2e74;
+    }
+
+    `;
+
+    document.head.appendChild(style);
+
+    const cells = document.querySelectorAll('.cell');
+
+    const winnerText = document.getElementById('winnerText');
+
+    let turn = "X";
+
+    const winPatterns = [
+
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+
+        [0,4,8],
+        [2,4,6]
+
+    ];
+
+    cells.forEach(cell => {
+
+        cell.addEventListener('click', () => {
+
+            if(cell.innerHTML === ""){
+
+                cell.innerHTML = turn;
+
+                checkWinner();
+
+                turn = turn === "X" ? "O" : "X";
+
+            }
+
+        });
+
+    });
+
+    function checkWinner(){
+
+        winPatterns.forEach(pattern => {
+
+            let a = cells[pattern[0]].innerHTML;
+            let b = cells[pattern[1]].innerHTML;
+            let c = cells[pattern[2]].innerHTML;
+
+            if(a && a === b && b === c){
+
+                winnerText.innerHTML = a + " Wins ❤️";
+
+            }
+
+        });
+
+    }
+
+});
+
+
+// ================= CATCH THE HEART =================
+
+gameCards[1].addEventListener('click', () => {
+
+    let heartGame = document.createElement('div');
+
+    heartGame.innerHTML = `
+
+    <div id="heartGameBox">
+
+        <h1>Catch The Heart 💖</h1>
+
+        <h2>Score: <span id="score">0</span></h2>
+
+        <div id="heart">❤️</div>
+
+        <button onclick="this.parentElement.parentElement.remove()">
+            Close
+        </button>
+
+    </div>
+
+    `;
+
+    document.body.appendChild(heartGame);
+
+    const style = document.createElement('style');
+
+    style.innerHTML = `
+
+    #heartGameBox{
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:500px;
+        height:500px;
+        background:#111;
+        border-radius:25px;
+        text-align:center;
+        overflow:hidden;
+        z-index:9999;
+        padding:20px;
+    }
+
+    #heart{
+        position:absolute;
+        font-size:3rem;
+        cursor:pointer;
+        transition:.2s;
+    }
+
+    `;
+
+    document.head.appendChild(style);
+
+    const heart = document.getElementById('heart');
+
+    const scoreText = document.getElementById('score');
+
+    let score = 0;
+
+    moveHeart();
+
+    function moveHeart(){
+
+        let x = Math.random() * 400;
+        let y = Math.random() * 350;
+
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+
+    }
+
+    heart.addEventListener('click', () => {
+
+        score++;
+
+        scoreText.innerHTML = score;
+
+        moveHeart();
+
+    });
+
+});
+
+
+// ================= LOVE QUIZ GAME =================
+
+gameCards[2].addEventListener('click', () => {
+
+    alert("You already played my love quiz baby 😘");
+
+});
+// JavaScript
+const startBtn = document.getElementById("startBtn");
+const bgMusic = document.getElementById("bgMusic");
+
+startBtn.addEventListener("click", () => {
+    bgMusic.play();
+    scrollToSection('loveLetter');
+    // optional: button hide karna
+    startBtn.style.display = "none";
+});
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+
+    // random position
+    const x = Math.random() * 500;
+    const y = Math.random() * 500;
+
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+});
+const startDate = new Date("2023-01-01");
+const today = new Date();
+
+const diffTime = today - startDate;
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+document.getElementById("daysCounter").innerHTML =
+`${diffDays} Days Together ❤️`;
+</script>
+
+</body>
+</html>
